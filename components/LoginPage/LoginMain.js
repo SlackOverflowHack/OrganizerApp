@@ -5,7 +5,10 @@ function LoginMain() {
     return (
         <div>
 
-            <LoginInput></LoginInput>
+            <div>
+                <LoginInput></LoginInput>
+            </div>
+
 
 
         </div>
