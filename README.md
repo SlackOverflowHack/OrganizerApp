@@ -40,9 +40,17 @@ Tailwind
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 npm install -D @tailwindcss/forms
+npm install @heroicons/react
+
 ```
 
 NextAuth
 ```bash
 npm install next-auth
+npm install @headlessui/react
+```
+
+Firebase
+```bash
+npm install firebase
 ```

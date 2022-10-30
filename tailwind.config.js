@@ -5,6 +5,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    extend: {
+      backgroundImage: (theme) => ({
+        scollage: "url('/collage_desktop.png')",
+      }),
+    },
+  },
+  variants: {
     extend: {},
   },
   plugins: [

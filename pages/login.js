@@ -1,13 +1,12 @@
 import React from 'react'
-import LoginBody from '../components/LoginPage/LoginMain'
+import LoginMain from '../components/LoginPage/LoginMain'
 
 function login() {
     return (
-        <div>
+        <div className='bg-scollage w-full h-full bg-center bg-cover '>
             {/* Body */}
-            <LoginBody></LoginBody>
+            <LoginMain></LoginMain>
         </div>
     )
 }
-
 export default login

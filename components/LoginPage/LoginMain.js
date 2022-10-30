@@ -4,13 +4,7 @@ import LoginInput from './LoginInput'
 function LoginMain() {
     return (
         <div>
-
-            <div>
-                <LoginInput></LoginInput>
-            </div>
-
-
-
+            <LoginInput></LoginInput>
         </div>
     )
 }
