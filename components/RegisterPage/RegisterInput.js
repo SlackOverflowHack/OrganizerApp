@@ -1,4 +1,4 @@
-
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -12,11 +12,12 @@ export default function RegisterInput() {
   const [birthday, setBirthday] = useState('');
   //YYYY-MM-DD
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
 
+  const router = useRouter();
 
 
   function submitForm(e) {
+    var res = null;
     e.preventDefault();
 
     axios
@@ -29,13 +30,23 @@ export default function RegisterInput() {
 
       })
       .then((response) => displayOutput(response))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err) {
+          res = "Fehler beim Eintragen"
+        } else {
+          res = null;
+        }
+
+      }
+      );
+
+    router.push("/login");
 
 
-    {
-      this.state.errorMessage &&
-        <h3 className="error"> {this.state.errorMessage} </h3>
-    }
+
+
+
+
 
   };
 
@@ -158,6 +169,7 @@ export default function RegisterInput() {
                       value={birthday}
                       onChange={e => setBirthday(e.target.value)}
                       type="text"
+                      placeholder='YYYY-MM_DD'
                       name="birthday"
                       id="birthday"
                       autoComplete="birthday"

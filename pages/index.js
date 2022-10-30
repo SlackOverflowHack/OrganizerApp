@@ -4,10 +4,23 @@ import {
   EllipsisVerticalIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/20/solid'
-import Image from 'next/image';
 import MySidebar from '../components/general/MySidebar';
-
-
+import { useRouter } from 'next/router';
+import PageActions from '../components/general/PageActions';
+import {
+  doc,
+  onSnapshot,
+  collection,
+  where,
+  query,
+  limit,
+  setDoc,
+  getDoc,
+  getDocs,
+  serverTimestamp
+} from '@firebase/firestore';
+import useAuth from '../hooks/useAuth';
+import { firebaseDb } from '../firebaseConfig'
 
 const teams = [
   { name: 'Karate-Kurs', href: '#', bgColorClass: 'bg-indigo-500' },
@@ -59,7 +72,35 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const { user } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [courses, setCourses] = useState([]);
+
+
+  const fetchCourses = async () => {
+
+    const q = query(collection(firebaseDb, "courses"));
+
+    const querySnapshot = await getDocs(q);
+
+    let tmpCourses = [];
+
+    querySnapshot.forEach((doc) => {
+      tmpCourses.push(doc.data());
+    });
+
+    setCourses(tmpCourses);
+  }
+
+  useEffect(() => {
+    if (user) {
+      fetchCourses()
+    }
+  }, [user]);
+
+
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const router = useRouter();
   return (
     <>
       <div className="min-h-full">
@@ -71,25 +112,7 @@ export default function Example() {
 
           <main className="flex-1">
             {/* Page title & actions */}
-            <div className="border-b border-gray-200 px-4 py-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
-              <div className="min-w-0 flex-1">
-                <h1 className="text-lg font-medium leading-6 text-gray-900 sm:truncate">Startseite</h1>
-              </div>
-              <div className="mt-4 flex sm:mt-0 sm:ml-4">
-                <button
-                  type="button"
-                  className="sm:order-0 order-1 ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:ml-0"
-                >
-                  Teilen
-                </button>
-                <button
-                  type="button"
-                  className="order-0 inline-flex items-center rounded-md border border-transparent bg-purple-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:order-1 sm:ml-3"
-                >
-                  Erstellen
-                </button>
-              </div>
-            </div>
+            <PageActions></PageActions>
 
 
             {/* Projects list (only on smallest breakpoint) */}

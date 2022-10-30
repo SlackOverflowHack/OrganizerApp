@@ -1,6 +1,7 @@
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 import useAuth from '../../hooks/useAuth';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
 
 
 
@@ -9,11 +10,14 @@ export default function LoginInput() {
     const { login, register, user } = useAuth();
     const [email, setEmail] = useState('bob@ross.com');
     const [pwd, setPwd] = useState('Test_123');
+    const router = useRouter()
     const formIncomplete = !(email && pwd);
 
     useEffect(() => {
         if (user) {
             // router navigate to home
+            router.push('/');
+
         }
     }, [user])
 

@@ -1,8 +1,8 @@
 import { PaperClipIcon } from '@heroicons/react/20/solid'
-import MySidebar from '../components/general/MySidebar'
-import Sidebar from '../components/general/MySidebar'
+import MySidebar from '../../components/general/MySidebar'
 
-export default function kursdetails() {
+export default function kursdetails(specialKurs) {
+
     return (
 
         <div className="min-h-full">
@@ -44,7 +44,7 @@ export default function kursdetails() {
                         <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
                             <dl className="sm:divide-y sm:divide-gray-200">
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">Name</dt>
+                                    <dt className="text-sm font-medium text-gray-500"> {specialKurs.Name}</dt>
                                     <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">Karate Kurs</dd>
                                 </div>
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
