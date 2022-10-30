@@ -35,7 +35,7 @@ export default function LoginInput() {
                         </h2>
                         <p className="mt-2 text-center text-sm text-gray-600">
                             Or{' '}
-                            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                            <a onClick={() => router.push("/register")} className="font-medium text-indigo-600 hover:text-indigo-500">
                             </a>
                         </p>
                     </div>

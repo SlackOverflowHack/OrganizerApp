@@ -78,6 +78,10 @@ export default function RegisterInput() {
                 <div>
                   <h3 className="text-lg font-medium leading-6 text-gray-100">Registriere dich, um Kurse erstellen zu können.</h3>
                 </div>
+                <div>
+                  <a onClick={() => router.push("/login")} className="font-medium text-indigo-600 hover:text-indigo-500">
+                    Schon ein Konto? </a>
+                </div>
                 <div className="grid grid-cols-4 gap-3">
 
 
@@ -93,7 +97,7 @@ export default function RegisterInput() {
                       type="text"
                       name="email-address"
                       id="email-address"
-                      placeholder='@'
+                      placeholder=''
                       autoComplete="email"
                       className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500  sm:text-sm"
                     />
@@ -196,14 +200,27 @@ export default function RegisterInput() {
 
 
                 </div>
+                <div>
+                  <a href='https://www.hs-fulda.de/unsere-hochschule/a-z-alle-institutionen/hochschulsport/anmelde-und-teilnahmebedingungen' className="font-medium text-indigo-600 hover:text-indigo-500">
+                    Hochschule Fulda </a>
+                  <a href='https://www.vhs-fulda.de/agb/' className="font-medium text-indigo-600 hover:text-indigo-500">
+                    Volkshochschule </a>
+                  <p>Ich habe die Allgemeinen Geschäftsbedingungen der Hochschule Fulda und der Volkshochschule gelesen und akzeptiere diese.</p>
+
+                  <input type="checkbox" id="checkAGB" name="checkAGB" value="Bike" />
+                </div>
               </div>
+
               <div className="bg-gray-50 bg-opacity-40 px-4 py-3 text-right sm:px-6">
+
                 <button
                   type="submit"
                   className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+
                 >
                   Registrieren
                 </button>
+
               </div>
             </div>
           </form>
