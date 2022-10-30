@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 function PageActions() {
     const router = useRouter();
 
-    let routeName = ''
-    if(router.pathname == '/kurse/past') routeName = 'Verganene Kurse';
-    else if(router.pathname == '/kurse') routeName = 'Aktuelle Kurse';
+    let routeName = 'Kurse'
+    if (router.pathname == '/kurse/past') routeName = 'Verganene Kurse';
+    else if (router.pathname == '/kurse') routeName = 'Aktuelle Kurse';
 
     return (
         <div>

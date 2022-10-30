@@ -79,7 +79,7 @@ export default function RegisterInput() {
                   <h3 className="text-lg font-medium leading-6 text-gray-100">Registriere dich, um Kurse erstellen zu können.</h3>
                 </div>
                 <div>
-                  <a onClick={() => router.push("/login")} className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a onClick={() => router.push("/login")} className="font-medium text-indigo-200 hover:text-indigo-50 cursor-pointer">
                     Schon ein Konto? </a>
                 </div>
                 <div className="grid grid-cols-4 gap-3">
@@ -201,13 +201,18 @@ export default function RegisterInput() {
 
                 </div>
                 <div>
-                  <a href='https://www.hs-fulda.de/unsere-hochschule/a-z-alle-institutionen/hochschulsport/anmelde-und-teilnahmebedingungen' className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href='https://www.hs-fulda.de/unsere-hochschule/a-z-alle-institutionen/hochschulsport/anmelde-und-teilnahmebedingungen' className="font-medium text-indigo-200 hover:text-indigo-50 cursor-pointer">
                     Hochschule Fulda </a>
-                  <a href='https://www.vhs-fulda.de/agb/' className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href='https://www.vhs-fulda.de/agb/' className="ml-16 font-medium text-indigo-200 hover:text-indigo-50 cursor-pointer">
                     Volkshochschule </a>
-                  <p>Ich habe die Allgemeinen Geschäftsbedingungen der Hochschule Fulda und der Volkshochschule gelesen und akzeptiere diese.</p>
 
+                </div>
+
+                <div>
                   <input type="checkbox" id="checkAGB" name="checkAGB" value="Bike" />
+
+                  <p className=' ml-4 text-sm'>Ich habe die Allgemeinen Geschäftsbedingungen der Hochschule Fulda und der Volkshochschule gelesen und akzeptiere diese.</p>
+
                 </div>
               </div>
 

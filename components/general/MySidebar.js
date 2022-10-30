@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/20/solid'
 
 const navigation = [
-    { name: 'Startseite', href: '/kurse', icon: HomeIcon, current: true },
+    { name: 'Startseite', href: '/', icon: HomeIcon, current: true },
     { name: 'Vergangene Kurse', href: '/kurse/past', icon: ClockIcon, current: false },
 ]
 //Get Data from Firebase?
