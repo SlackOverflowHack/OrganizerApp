@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
 export default function RegisterInput() {
   const axios = require('axios');
@@ -12,9 +11,7 @@ export default function RegisterInput() {
   const [birthday, setBirthday] = useState('');
   //YYYY-MM-DD
   const [password, setPassword] = useState('');
-
   const router = useRouter();
-
 
   function submitForm(e) {
     var res = null;
@@ -41,26 +38,9 @@ export default function RegisterInput() {
       );
 
     router.push("/login");
-
-
-
-
-
-
-
   };
 
-
-
-
-
-
-
-
-
   return (
-
-
     <>
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8 bg-gray-500 p-10 bg-opacity-60 border border-double shadow-md">
@@ -195,37 +175,26 @@ export default function RegisterInput() {
                       className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
-
-
-
-
                 </div>
                 <div>
                   <a href='https://www.hs-fulda.de/unsere-hochschule/a-z-alle-institutionen/hochschulsport/anmelde-und-teilnahmebedingungen' className="font-medium text-indigo-200 hover:text-indigo-50 cursor-pointer">
                     Hochschule Fulda </a>
                   <a href='https://www.vhs-fulda.de/agb/' className="ml-16 font-medium text-indigo-200 hover:text-indigo-50 cursor-pointer">
                     Volkshochschule </a>
-
                 </div>
-
                 <div>
                   <input type="checkbox" id="checkAGB" name="checkAGB" value="Bike" />
 
                   <p className=' ml-4 text-sm'>Ich habe die Allgemeinen Geschäftsbedingungen der Hochschule Fulda und der Volkshochschule gelesen und akzeptiere diese.</p>
-
                 </div>
               </div>
-
               <div className="bg-gray-50 bg-opacity-40 px-4 py-3 text-right sm:px-6">
-
                 <button
                   type="submit"
                   className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-
                 >
                   Registrieren
                 </button>
-
               </div>
             </div>
           </form>
