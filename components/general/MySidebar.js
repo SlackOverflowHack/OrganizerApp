@@ -7,8 +7,8 @@ import {
 } from '@heroicons/react/20/solid'
 
 const navigation = [
-    { name: 'Startseite', href: '/', icon: HomeIcon, current: true },
-    { name: 'Vergangene Kurse', href: '#', icon: ClockIcon, current: false },
+    { name: 'Startseite', href: '/kurse', icon: HomeIcon, current: true },
+    { name: 'Vergangene Kurse', href: '/kurse/past', icon: ClockIcon, current: false },
 ]
 //Get Data from Firebase?
 const favorites = [
@@ -49,8 +49,8 @@ function MySidebar() {
                                             alt=""
                                         />
                                         <span className="flex min-w-0 flex-1 flex-col">
-                                            <span className="truncate text-sm font-medium text-gray-900">Jessy Schwarz</span>
-                                            <span className="truncate text-sm text-gray-500">@jessyschwarz</span>
+                                            <span className="truncate text-sm font-medium text-gray-900">Rainer Winkler</span>
+                                            <span className="truncate text-sm text-gray-500">@rwinkler</span>
                                         </span>
                                     </span>
                                     <ChevronUpDownIcon
